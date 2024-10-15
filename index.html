@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .bg-gradient-custom {
+        background: linear-gradient(to right, #575ce5 50%, #f9fbfc 50%);
+        height: 100vh; /* Ensure it covers the full viewport height */
+        margin: 0; /* Remove default margin */
+      }
+
+      .trans{
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
+
+      .webs{
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      .tails{
+        transform: rotateX(180deg);
+      }
+
+      @keyframes spin-tails {
+
+        0%{
+          transform: rotateX(0);
+        }
+
+        100%{
+          transform: rotateX(1980deg);
+        }
+        
+      }
+
+      @keyframes spin-heads {
+
+        0%{
+          transform: rotateX(0);
+        }
+
+        100%{
+          transform: rotateX(2160deg);
+        }
+        
+
+        
+      }
+
+      .aimates{
+        animation:spin-tails 3s forwards;
+      }
+
+      .aimate{
+        animation:spin-heads 3s forwards;
+      }
+    </style>
+</head>
+<body class="bg-gradient-custom">
+
+    <div class="bg-white w-[400px] p-[50px] absolute -translate-x-[50%] -translate-y-[50%] top-[50%] left-[50%] shadow-[15px_30px_35px_rgba(0,0,0,0.1)] rounded-[10px] ">
+
+      <div class="stats text-right text-[#101020] font-[700] leading-[25px] flex justify-between">
+        <p class="heads-count ">Heads: 0</p>
+        <p class="tails_count">Tails: 0</p>
+      </div>
+
+      <div id="coin" class="trans coin  h-[150px] w-[150px] relative m-[50px_auto]  ">
+        <div class="heads w-[100%] h-[100%] absolute webs">
+          <img src="removed heas.png" alt="" class="w-[145px] h-[145px] ">
+        </div>
+        <div class="tails w-[100%] h-[100%] absolute webs">
+          <img src="tails.png" alt="" class="w-[145px] h-[145px]">
+
+        </div>
+      </div>
+
+      <div class="buttons flex justify-between ">
+        <button class="flip-button bg-[#424ae0] text-white w-[120px] p-[10px_0px] border-[2.5px] border-blue-500 rounded-[5px]">Flip Coin</button>
+        <button class="reset  bg-[#424ae0] text-white w-[120px] p-[10px_0px] border-[2.5px] border-blue-500 rounded-[5px]">Reset</button>
+      </div>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
